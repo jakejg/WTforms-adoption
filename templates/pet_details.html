@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block details %}
+<h1 class="text-center">{{pet.name}}</h1>
+<div class="container text-center">
+    <img src={{pet.photo_url}} alt="No Photo">
+        <div><b>Age: {{pet.age}}</b></div>
+        <div><b>I am a {{pet.species}}!</b></div>
+   
+    <a class="btn btn-primary" href="/edit_pet/{{pet.id}}">Change Info</a>
+</div>
+
+{% endblock %}

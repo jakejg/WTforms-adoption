@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block list_pets %}
+<h1 class="text-center">Pets <span><a href='/add' class= "btn btn-primary text-center">Add a Pet!</a></span></h1>
+<div class="container text-center">
+    <div class="row">
+        {% for pet in pets %}
+        <div class="col-sm-3 mt-2">
+            <a href={{pet.id}}><img class="img-fluid rounded border border-secondary" src={{pet.set_image()}} alt="No Photo"></a>
+            {% if pet.available %}
+            <div>{{pet.name}} is <b class= "text-success">Available!</b></div>
+            {% else %}
+            <div>{{pet.name}} is <b class= "text-danger">Not Available</b></div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

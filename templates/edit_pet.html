@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block edit_pet %}
+<h1 class="text-center">Change Info</h1>
+<div class="container">
+<form method="POST">
+    {% include 'form.html' %}
+  
+    <button class = "btn btn-primary" type="submit">Save Changes</button>
+  </form>
+</div>
+{% endblock %}
